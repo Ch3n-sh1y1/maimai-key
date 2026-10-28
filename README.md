@@ -4,6 +4,11 @@
 
 > 这是社区向的键盘/触摸改编练习项目，与 SEGA 无关。请只使用你有权使用的音乐与谱面。
 
+## 下载
+
+Windows 构建（ZIP / 安装器 / 便携版 / SHA256）见
+[GitHub Releases v0.3.1](https://github.com/Ch3n-sh1y1/maimai-key/releases/tag/v0.3.1)。
+
 ## 当前能力
 
 - 8 键圆环 + Tap / Hold / Touch / Break / Slide 判定。
@@ -46,7 +51,7 @@ pnpm package         # 生成 Windows 安装器与便携版（release/）
 pnpm package:dir     # 只生成免安装目录
 ```
 
-产物（v0.3.1）：
+本地构建产物（`release/` 不入库；发布版见上方 GitHub Releases）：
 
 - `release/MaimaiKey-0.3.1-setup.exe`：NSIS 安装器（可选择目录）。
 - `release/MaimaiKey-0.3.1-portable.exe`：单文件便携版，首次运行会解压到临时目录。

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#081120"/>
+      <stop offset="0.55" stop-color="#0d1b33"/>
+      <stop offset="1" stop-color="#17233d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#7ce0ff" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#7ce0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="16" y="16" width="568" height="768" rx="34" fill="none" stroke="#7ce0ff" stroke-opacity="0.16"/>
+  <circle cx="300" cy="356" r="270" fill="url(#glow)"/>
+  <g fill="none" stroke="#7ce0ff" stroke-opacity="0.12">
+    <circle cx="300" cy="356" r="238"/>
+    <circle cx="300" cy="356" r="196"/>
+    <circle cx="300" cy="356" r="92"/>
+  </g>
+  <g stroke-width="12" fill="none" stroke-linecap="round">
+    <path d="M 300 118 A 238 238 0 0 1 468 188" stroke="#66d9ff"/>
+    <path d="M 500 246 A 238 238 0 0 1 500 466" stroke="#7dffce"/>
+    <path d="M 468 524 A 238 238 0 0 1 300 594" stroke="#ffe066"/>
+    <path d="M 132 524 A 238 238 0 0 1 100 466" stroke="#ff9f6e"/>
+    <path d="M 100 246 A 238 238 0 0 1 132 188" stroke="#ff7b9c"/>
+  </g>
+  <g>
+    <circle cx="300" cy="118" r="14" fill="#66d9ff"/>
+    <circle cx="468" cy="188" r="14" fill="#7dffce"/>
+    <circle cx="500" cy="356" r="14" fill="#ffe066"/>
+    <circle cx="468" cy="524" r="14" fill="#ff9f6e"/>
+    <circle cx="300" cy="594" r="14" fill="#ff7b9c"/>
+    <circle cx="132" cy="524" r="14" fill="#c59bff"/>
+    <circle cx="100" cy="356" r="14" fill="#6ea8ff"/>
+    <circle cx="132" cy="188" r="14" fill="#9be15d"/>
+  </g>
+  <circle cx="300" cy="356" r="58" fill="#081120" stroke="#ff5d73" stroke-width="6"/>
+  <circle cx="300" cy="356" r="18" fill="#7ce0ff"/>
+  <g fill="#e8f1ff" font-family="Segoe UI, Microsoft YaHei, sans-serif" text-anchor="middle">
+    <text x="300" y="700" font-size="34" font-weight="800" letter-spacing="4">ARTWORK SLOT</text>
+    <text x="300" y="738" font-size="18" fill="#8ea3c0" letter-spacing="2">600 × 800 · 替换此图即可</text>
+    <text x="300" y="76" font-size="15" fill="#8ea3c0" letter-spacing="6">KEYBOARD RHYTHM</text>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+.calibration-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 6, 12, 0.72);
+  backdrop-filter: blur(10px);
+  animation: screen-in 160ms ease-out;
+}
+
+.calibration-card {
+  width: min(560px, 90vw);
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+}
+
+.calibration-card .muted {
+  line-height: 1.7;
+}
+
+.calibration-pad {
+  width: 190px;
+  height: 190px;
+  margin: 10px 0 2px;
+  border-radius: 50%;
+  border: 2px solid rgba(124, 224, 255, 0.45);
+  background: radial-gradient(circle at 50% 40%, rgba(124, 224, 255, 0.22), rgba(10, 18, 34, 0.9) 70%);
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition: transform 90ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.calibration-pad.pulse {
+  transform: scale(1.05);
+  border-color: rgba(124, 224, 255, 0.95);
+  box-shadow: 0 0 50px rgba(124, 224, 255, 0.35);
+}
+
+.calibration-status {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.calibration-result {
+  min-height: 42px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.calibration-result strong {
+  color: var(--accent);
+  font-size: 22px;
+}
+
+.calibration-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.calibration-actions button {
+  flex: 1;
+}

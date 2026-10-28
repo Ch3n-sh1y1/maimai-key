@@ -1,0 +1,107 @@
+{
+  "name": "maimai-key",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "Keyboard-friendly maimai-style rhythm game for Windows",
+  "author": "MaimaiKey contributors",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "dev:electron": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 node tools/launch-electron.cjs .\"",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:smoke": "node tools/smoke.cjs shots",
+    "test:e2e": "node tools/smoke-auto.cjs shots",
+    "test:settings": "node tools/smoke-settings.cjs shots",
+    "test:pause": "node tools/smoke-pause.cjs shots",
+    "test:visuals": "node tools/smoke-visuals.cjs shots",
+    "test:replay": "node tools/smoke-replay.cjs shots",
+    "test:calibration": "node tools/smoke-calibration.cjs shots",
+    "test:electron": "node tools/electron-smoke.cjs shots",
+    "test:content": "node tools/electron-content-smoke.cjs",
+    "test:packaged": "node tools/electron-packaged-smoke.cjs shots",
+    "test:auto": "node tools/electron-auto-smoke.cjs shots",
+    "test:drop": "node tools/electron-drop-smoke.cjs",
+    "test:creator": "node tools/electron-creator-smoke.cjs",
+    "test:ui": "node tools/ui-screenshots.cjs",
+    "test:generated": "node tools/electron-generated-play.cjs",
+    "test:formats": "node tools/electron-audio-formats.cjs",
+    "test:mp3": "node tools/electron-mp3-play.cjs",
+    "test:drm": "node tools/electron-drm-zip.cjs",
+    "test:background": "node tools/browser-background.cjs",
+    "test:background-dnd": "node tools/browser-background-dnd.cjs",
+    "test:hardening": "node tools/electron-hardening-smoke.cjs",
+    "test:portable": "node tools/electron-portable-smoke.cjs",
+    "test:no-devtools": "node tools/electron-no-devtools.cjs",
+    "test:title-ui": "node tools/browser-title-ui.cjs",
+    "test:input-modes": "node tools/browser-input-modes.cjs",
+    "gen:content": "tsx tools/gen-content.ts",
+    "import:maidata": "tsx tools/import-maidata.ts",
+    "chart:validate": "tsx tools/validate-chart.ts",
+    "electron": "node tools/launch-electron.cjs .",
+    "check:assets": "tsx tools/check-assets.ts",
+    "package:dir": "pnpm build && electron-builder --win --dir",
+    "package": "pnpm build && electron-builder --win --x64"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.1",
+    "heic2any": "^0.0.4",
+    "pixi.js": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.12",
+    "playwright-core": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "wait-on": "^9.5.1"
+  },
+  "build": {
+    "appId": "com.maimaikey.app",
+    "productName": "MaimaiKey",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "MaimaiKey-${version}-setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "MaimaiKey-${version}-portable.${ext}",
+      "useZip": true
+    }
+  }
+}

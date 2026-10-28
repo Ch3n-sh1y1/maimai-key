@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "starter",
+  "title": "Neon Drift",
+  "artist": "Procedural Placeholder",
+  "charter": "Auto-generated",
+  "bpm": 150,
+  "audioOffsetMs": 0,
+  "audio": "audio/neon-drift.wav",
+  "jacket": "jacket.svg",
+  "difficulties": [
+    {
+      "name": "Basic",
+      "level": 4,
+      "chart": "charts/basic.simai"
+    },
+    {
+      "name": "Advanced",
+      "level": 7,
+      "chart": "charts/advanced.simai"
+    },
+    {
+      "name": "Expert",
+      "level": 10,
+      "chart": "charts/expert.simai"
+    }
+  ]
+}
